@@ -26,7 +26,6 @@ if(req.body.list === "Working List") {
     workItem.push(item);
     res.redirect('/work');
 } else {
-
     items.push(item);
     res.redirect('/');
 }
