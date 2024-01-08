@@ -2,19 +2,20 @@
 <%-include("header")-%>
 <body>
     <div class="box" id="heading">
-        <h1>It's a <%=listTitle %></h1>
+        <h1><%=listTitle %></h1>
     </div>
 
     <div class="box">
         <ul>
-            <%for(let i=0; i<newListItems.length;i++){ %>
+            <%newListItems.forEach((item) => { %>
+                <form method="post" action="/delete">
                 <div class="item">
-            <div class="item">
-                <input type="checkbox" id="item<%=i%>" name="button">
-                <p><%= newListItems[i] %></p>
+                <input type="checkbox" id="item<%=item%>" onChange="this.form.submit()" value="<%=item._id%>" name="checkbox">
+                <p><%= item.name%></p>
+                <input name="listName" value="<%=listTitle%>" type="hidden"></input>
             </div>
-        </div>
-            <% } %>
+        </form>
+            <% }) %>
         </ul>
     
 

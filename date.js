@@ -7,7 +7,7 @@ function getDate () {
 const options = {
  day: "numeric",
  weekday: "long",
- month: "long",
+ month: "long", 
  year: "numeric",
 }
 
